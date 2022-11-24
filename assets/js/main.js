@@ -1,0 +1,107 @@
+// Variabeln
+let newArrivals = document.getElementById("newArrivalsGrid");
+
+// new Arrivals / Artikel anzeigen
+data.forEach((e) => {
+	let container = document.createElement("div");
+
+	let container0 = document.createElement("div");
+	let container1 = document.createElement("div");
+	let container2 = document.createElement("div");
+
+	let containerInfo = container.appendChild(container0);
+	let containerDiv1 = container.appendChild(container1);
+	let containerDiv2 = container.appendChild(container2);
+
+	let img = document.createElement("img");
+	let productName = document.createElement("h5");
+	let preis = document.createElement("p");
+	let plus = document.createElement("p");
+	let pfeil = document.createElement("img");
+
+	img.src = e.img;
+	containerInfo.id = "containerInfo";
+
+	productName.textContent = /* e.brand + " " + */ e.name;
+	preis.textContent = e.price;
+	plus.textContent = "+";
+	plus.id = "addWarenkorb";
+	pfeil.src = "assets/img/arrow.svg";
+	pfeil.id = "accordion";
+
+	container.appendChild(img);
+	container.appendChild(container0);
+	containerInfo.appendChild(container1);
+	containerInfo.appendChild(container2);
+	containerDiv1.appendChild(productName);
+	containerDiv1.appendChild(preis);
+	containerDiv2.appendChild(plus);
+	containerDiv2.appendChild(pfeil);
+
+	// new Arrivals / Akkordion
+	let accordionPfeil = document.querySelectorAll("#accordion");
+
+	let accordionMenue = document.createElement("div");
+	accordionMenue.id="accordionMenue"
+	let brandName = document.createElement("p");
+	brandName.textContent=e.brand
+	let containerGroessen = document.createElement("div");
+	let groesse = document.createElement("p");
+	containerGroessen.innerHTML="<p>"+e.sizes.join("</p> <p>")+"</p>"
+
+	container.appendChild(accordionMenue)
+	accordionMenue.appendChild(brandName)
+	accordionMenue.appendChild(containerGroessen)
+/* 	containerGroessen.appendChild(groesse) */
+
+	pfeil.addEventListener("click", () => {
+		if (accordionMenue.style.display === "block") {
+			accordionMenue.style.display = "none"
+			pfeil.style.transform="rotate(0deg)"
+			pfeil.style.filter="blur(0px)"
+		} else {
+			accordionMenue.style.display = "block"
+			pfeil.style.transform="rotate(180deg)"
+			pfeil.style.filter="blur(1px)"
+		}
+	});
+
+
+
+	newArrivals.appendChild(container);
+});
+
+// Warenkorb Counter
+let warenkorbCounter = document.querySelector("#warenkorbCounter");
+
+let plusToAdd = document.querySelectorAll("#addWarenkorb");
+let counter = 0;
+
+plusToAdd.forEach((e) => {
+	e.addEventListener("click", () => {
+		counter++;
+		warenkorbCounter.innerHTML = counter;
+	});
+});
+
+// Newsletter
+let newsletterContainer = document.querySelector("#newsletter");
+let newsletterInput = document.querySelector("#newsletterMail");
+let newsletterButton = document.querySelector("#newsletterSubmit");
+
+newsletterButton.addEventListener("click", () => {
+	// read Email
+	console.log(newsletterInput.value);
+
+	// Change innerHTML
+	newsletterContainer.innerHTML = "";
+	let thankYou = document.createElement("h4");
+	let response = document.createElement("p");
+
+	thankYou.textContent = "THANK YOU!";
+	response.textContent =
+		newsletterInput.value + " is registered. " + "You will get our response.";
+	newsletterInput = "";
+	newsletterContainer.appendChild(thankYou);
+	newsletterContainer.appendChild(response);
+});
