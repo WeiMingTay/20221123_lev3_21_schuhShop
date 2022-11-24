@@ -10,6 +10,7 @@ Das Figma-Layout findest du <a href="https://www.figma.com/file/4Izjo6GKSsFEvTNI
 Die Inhalte der Seite werden statisch über das HTML eingefügt. Nur die Liste mit den angebotenen Schuhen (unter der Überschrift “New arrivals”), fügst du über das JavaScript ein. Dafür findest du unten in den Kommentaren ein Array, was verarbeitet werden soll.
 
 Die restlichen Bilder und Icons findest du im <a href="https://drive.google.com/file/d/1Tsdw1Hh3Rkne8eDNZuhwdPdABMn0ax7e/view?usp=drive_web&authuser=0">Classroom</a>.
+
 ![Alt text](assets/img/readme/Screenshot%202022-11-24%20231157.png)
 
 ### Schuhkarte
