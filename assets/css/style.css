@@ -43,6 +43,23 @@ header {
   align-items: center;
 }
 
+.skipNav {
+  position: absolute;
+  background-color: #e5c643;
+  color: #fff;
+  top: 0;
+  left: 0.5rem;
+  border-radius: 0 0 15px 15px;
+  padding: 0.25rem 1rem;
+  transform: translateY(-120%);
+  transition: transform 500ms;
+  border: none;
+}
+
+.skipNav:focus {
+  transform: translateY(0);
+}
+
 header ul {
   display: flex;
   gap: 1rem;
@@ -61,6 +78,55 @@ header li:last-child a {
   color: #fff;
   padding: 0.5rem 0.75rem;
   border-radius: 5px;
+}
+
+.cookiesModal {
+  width: 100%;
+  border: none;
+  background-color: #fbeda3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  box-shadow: 0 0 10px 2px #000;
+}
+
+.cookiesModal::-webkit-backdrop {
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background-color: rgba(229, 198, 67, 0.45);
+}
+
+.cookiesModal::backdrop {
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background-color: rgba(229, 198, 67, 0.45);
+}
+
+.cookiesModal h3 {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+}
+
+.cookiesModal button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-left: 1rem;
+  border: none;
+  border-radius: 10px;
+}
+
+#cookiesAccept {
+  background-color: #000;
+  color: #fff;
+}
+
+#cookieReject {
+  background-color: #fff;
+  color: #fff;
 }
 
 /* ==========
@@ -98,6 +164,47 @@ Main
 
 #warenkorb img {
   scale: 0.8;
+}
+
+/* Warenkorb Popup */
+.warenkorbModal {
+  padding: 2rem;
+  max-width: 50rem;
+  text-align: center;
+  border: none;
+  /* border: 5px solid $primaryColour; */
+  box-shadow: 0 0 15px 2px #000;
+  /* position: absolute; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+}
+
+.warenkorbModal button {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: 0;
+}
+
+.warenkorbModal button:hover {
+  scale: 0.9;
+}
+
+.warenkorbModal::-webkit-backdrop {
+  background-color: rgba(229, 198, 67, 0.75);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.warenkorbModal::backdrop {
+  background-color: rgba(229, 198, 67, 0.75);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 
 /* ===== Title Content ===== */

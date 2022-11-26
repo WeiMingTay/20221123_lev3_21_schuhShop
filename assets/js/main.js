@@ -1,6 +1,21 @@
 // Variabeln
 let newArrivals = document.getElementById("newArrivalsGrid");
 
+// Cookies
+let cookiesContainer = document.querySelector(".cookiesModal");
+let acceptCookies = document.querySelector("#cookiesAccept");
+let rejectCookies = document.querySelector("#cookiesReject");
+
+window.onload = () => {
+	cookiesContainer.showModal();
+};
+acceptCookies.addEventListener("click", () => {
+	cookiesContainer.close();
+});
+rejectCookies.addEventListener("click", () => {
+	window.location.reload();
+});
+
 // new Arrivals / Artikel anzeigen
 data.forEach((e) => {
 	let container = document.createElement("div");
@@ -42,46 +57,64 @@ data.forEach((e) => {
 	let accordionPfeil = document.querySelectorAll("#accordion");
 
 	let accordionMenue = document.createElement("div");
-	accordionMenue.id="accordionMenue"
+	accordionMenue.id = "accordionMenue";
 	let brandName = document.createElement("p");
-	brandName.textContent=e.brand
+	brandName.textContent = e.brand;
 	let containerGroessen = document.createElement("div");
 	let groesse = document.createElement("p");
-	containerGroessen.innerHTML="<p>"+e.sizes.join("</p> <p>")+"</p>"
+	containerGroessen.innerHTML = "<p>" + e.sizes.join("</p> <p>") + "</p>";
 
-	container.appendChild(accordionMenue)
-	accordionMenue.appendChild(brandName)
-	accordionMenue.appendChild(containerGroessen)
-/* 	containerGroessen.appendChild(groesse) */
+	container.appendChild(accordionMenue);
+	accordionMenue.appendChild(brandName);
+	accordionMenue.appendChild(containerGroessen);
+	/* 	containerGroessen.appendChild(groesse) */
 
 	pfeil.addEventListener("click", () => {
 		if (accordionMenue.style.display === "block") {
-			accordionMenue.style.display = "none"
-			pfeil.style.transform="rotate(0deg)"
-			pfeil.style.filter="blur(0px)"
+			accordionMenue.style.display = "none";
+			pfeil.style.transform = "rotate(0deg)";
+			pfeil.style.filter = "blur(0px)";
 		} else {
-			accordionMenue.style.display = "block"
-			pfeil.style.transform="rotate(180deg)"
-			pfeil.style.filter="blur(1px)"
+			accordionMenue.style.display = "block";
+			pfeil.style.transform = "rotate(180deg)";
+			pfeil.style.filter = "blur(1px)";
 		}
 	});
 
-
-
 	newArrivals.appendChild(container);
+	return;
 });
-
+// WARENKORB
 // Warenkorb Counter
 let warenkorbCounter = document.querySelector("#warenkorbCounter");
 
 let plusToAdd = document.querySelectorAll("#addWarenkorb");
 let counter = 0;
 
-plusToAdd.forEach((e) => {
-	e.addEventListener("click", () => {
+plusToAdd.forEach((w) => {
+	w.addEventListener("click", () => {
 		counter++;
 		warenkorbCounter.innerHTML = counter;
+
+		if (counter === 0) {
+			warenkorbInhalt.innerHTML = "Cart is empty!!";
+		} else if (counter > 0) {
+			warenkorbInhalt.innerHTML = counter + " shoes in cart.";
+		}
 	});
+});
+
+// Warenkorb Modal
+let warenkorbModal = document.querySelector(".warenkorbModal");
+let openModal = document.querySelector("#openModal");
+let closeModal = document.querySelector("#closeModal");
+
+let warenkorbInhalt = document.querySelector("#warenkorbInhalt");
+openModal.addEventListener("click", () => {
+	warenkorbModal.showModal();
+});
+closeModal.addEventListener("click", () => {
+	warenkorbModal.close();
 });
 
 // Newsletter

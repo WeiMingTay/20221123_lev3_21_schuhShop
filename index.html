@@ -9,6 +9,7 @@
 	</head>
 	<body>
 		<header>
+			<a class="skipNav" href="#newArrivals">skip navigation</a>
 			<div class="logo">
 				<a href="#"><img src="assets/img/logo.svg" alt="" /></a>
 			</div>
@@ -117,8 +118,23 @@
 			</div>
 			<div id="warenkorb">
 				<p id="warenkorbCounter">0</p>
-				<img src="assets/img/shopping-cart.svg" alt="warenkorb" />
+				<img
+					id="openModal"
+					src="assets/img/shopping-cart.svg"
+					alt="warenkorb"
+				/>
 			</div>
+			<dialog class="warenkorbModal">
+				<button id="closeModal">&times;</button>
+				<p id="warenkorbInhalt">Cart is empty</p>
+			</dialog>
+			<dialog class="cookiesModal">
+				<h3>we use cookies</h3>
+				<div>
+					<button id="cookiesAccept">Accept</button>
+					<button id="cookiesReject">Reject</button>
+				</div>
+			</dialog>
 		</footer>
 
 		<script src="assets/js/data.js"></script>
