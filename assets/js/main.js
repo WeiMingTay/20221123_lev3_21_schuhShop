@@ -10,7 +10,7 @@ window.onload = () => {
 	cookiesContainer.showModal();
 };
 acceptCookies.addEventListener("click", () => {
-	cookiesContainer.close();
+	cookiesContainer.remove();
 });
 rejectCookies.addEventListener("click", () => {
 	window.location.reload();
