@@ -106,7 +106,7 @@ plusToAdd.forEach((w) => {
 
 // Warenkorb Modal
 let warenkorbModal = document.querySelector(".warenkorbModal");
-let openModal = document.querySelector("#openModal");
+let openModal = document.querySelector("#warenkorb");
 let closeModal = document.querySelector("#closeModal");
 
 let warenkorbInhalt = document.querySelector("#warenkorbInhalt");
