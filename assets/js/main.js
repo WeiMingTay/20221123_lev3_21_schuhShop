@@ -6,9 +6,9 @@ let cookiesContainer = document.querySelector(".cookiesModal");
 let acceptCookies = document.querySelector("#cookiesAccept");
 let rejectCookies = document.querySelector("#cookiesReject");
 
-window.onload = () => {
+/* window.onload = () => {
 	cookiesContainer.showModal();
-};
+}; */
 acceptCookies.addEventListener("click", () => {
 	cookiesContainer.remove();
 });
@@ -81,28 +81,39 @@ data.forEach((e) => {
 		}
 	});
 
-	newArrivals.appendChild(container);
-	return;
-});
-// WARENKORB
-// Warenkorb Counter
-let warenkorbCounter = document.querySelector("#warenkorbCounter");
+	// WARENKORB
+	// Warenkorb Counter
+	let warenkorb = document.querySelector("#warenkorb");
+	let warenkorbCounter = document.querySelector("#warenkorbCounter");
 
-let plusToAdd = document.querySelectorAll("#addWarenkorb");
-let counter = 0;
+	let plusToAdd = document.querySelectorAll("#addWarenkorb");
+	let counter = 0;
 
-plusToAdd.forEach((w) => {
-	w.addEventListener("click", () => {
-		counter++;
-		warenkorbCounter.innerHTML = counter;
+	plusToAdd.forEach((w) => {
+		w.addEventListener("click", () => {
+			counter++;
+			warenkorbCounter.innerHTML = counter;
 
-		if (counter === 0) {
-			warenkorbInhalt.innerHTML = "Cart is empty!!";
-		} else if (counter > 0) {
-			warenkorbInhalt.innerHTML = counter + " shoes in cart.";
-		}
+			if (counter === 0) {
+				warenkorbInhalt.innerHTML = "Cart is empty!!";
+			} else if (counter > 0) {
+				warenkorbInhalt.innerHTML = counter + " shoes in cart.";
+			}
+		});
 	});
+
+	newArrivals.appendChild(container);
 });
+
+/* let footer = document.querySelector("footer");
+
+footer.addEventListener("mouseover", () => {
+	warenkorb.style.bottom = "1rem";
+	
+});
+document.querySelector("main").addEventListener("mouseover", () => {
+	warenkorb.style.bottom = "3rem";
+}); */
 
 // Warenkorb Modal
 let warenkorbModal = document.querySelector(".warenkorbModal");

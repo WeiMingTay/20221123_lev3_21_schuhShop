@@ -7,7 +7,10 @@
 		<title>Schuhe Online</title>
 		<link rel="stylesheet" href="assets/css/style.css" />
 	</head>
-	<body>
+	<body>			<dialog class="warenkorbModal">
+		<button id="closeModal">&times;</button>
+		<p id="warenkorbInhalt">Cart is empty</p>
+	</dialog>
 		<div class="cookiesModal">
 			<div class="cookiesBanner">
 				<h3>we use cookies</h3>
@@ -56,12 +59,12 @@
 					<p>
 						Get 30€ off for first transaction using Rondovision mobile app now.
 					</p>
-					<div>
+					<div id="playstore">
 						<img src="assets/img/app-store.png" alt="apple app store" />
 						<img src="assets/img/google-play.png" alt="google play store" />
 					</div>
 				</div>
-				<div>
+				<div id="appImage">
 					<img src="assets/img/app.png" alt="app image" />
 				</div>
 			</section>
@@ -127,17 +130,14 @@
 			</div>
 			<div id="warenkorb">
 				<p id="warenkorbCounter"></p>
-				<p id="warenkorbAnimation">Cart</p>
+				<!-- <p id="warenkorbAnimation">Cart</p> -->
 				<img
 					id="openModal"
 					src="assets/img/shopping-cart.svg"
 					alt="warenkorb"
 				/>
 			</div>
-			<dialog class="warenkorbModal">
-				<button id="closeModal">&times;</button>
-				<p id="warenkorbInhalt">Cart is empty</p>
-			</dialog>
+
 		</footer>
 
 		<script src="assets/js/data.js"></script>
