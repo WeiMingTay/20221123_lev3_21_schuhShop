@@ -19,6 +19,10 @@ body {
 	font-family: "Poppins", sans-serif;
 	accent-color: $primaryColour;
 }
+.blur {
+	filter: blur(3px);
+	z-index: -1;
+}
 button,
 input {
 	font: inherit;
@@ -651,37 +655,48 @@ Media Queries
 		margin-right: 1rem;
 		transition: all 250ms;
 		transition: transform 500ms;
+		position: relative;
 
 		span {
-			height: 9px;
+			height: 6px;
 			/* border-bottom: 8px solid $textColourDark; */
-			width: 100%;
+			width: 200%;
 			background-color: $textColourDark;
-			border-radius: 2px;
+			border-radius: 20px;
 			position: absolute;
-			margin-bottom: 0.3rem;
-			transform: rotate(0deg) translate(0, 0);
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			transition: transform 600ms, opacity 800ms, top 600ms;
+
+			&:first-of-type {
+				top: 25%;
+			}
+			&:last-of-type {
+				top: 75%;
+			}
 		}
-		&:hover span,
+		/* &:hover span,
 		&:focus span {
 			height: 0;
 			border-bottom: 40px solid $textColourDark;
-		}
+		} */
 	}
 	.activeHamburger {
+		z-index: 2;
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 		span {
-			height: 0;
-			border-bottom: 40px solid $textColourDark;
-			/* &:first-of-type {
-				border-color: green;
-				transform: rotate(45deg) translate(50%, 50%);
+			&:first-of-type {
+				top: 50%;
+				transform: translate(-50%, -50%) rotate(-315deg);
 			}
 			&:nth-of-type(2) {
-				transform: translateX(120%);
+				opacity: 0;
 			}
 			&:last-of-type {
-				transform: rotate(-45deg) translate(50%, -50%);
-			} */
+				top: 50%;
+				transform: translate(-50%, -50%) rotate(-225deg);
+			}
 		}
 	}
 	/* Main */
