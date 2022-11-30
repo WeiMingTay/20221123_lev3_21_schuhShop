@@ -104,6 +104,9 @@ header {
 		}
 	}
 }
+.hamburgerMenue {
+	display: none;
+}
 // Cookies
 .cookiesModal {
 	width: 100vw;
@@ -527,6 +530,9 @@ footer {
 Media Queries
 ==========*/
 @media screen and (min-width: 1000px) {
+	#logoSmall {
+		display: none;
+	}
 	#newArrivalsGrid {
 		grid-template-columns: repeat(3, 1fr);
 	}
@@ -547,10 +553,10 @@ Media Queries
 	}
 	/* Header */
 	// Logo
-	.logo {
-		width: 5%;
-		overflow: hidden;
+	#logoBig {
+		display: none;
 	}
+
 	// Navigation
 	/* Main */
 	// Title Content
@@ -605,9 +611,8 @@ Media Queries
 	}
 	/* Header */
 	// Logo
-	.logo {
-		width: 10%;
-		overflow: hidden;
+	#logoBig {
+		display: none;
 	}
 	// Navigation
 	.headerNav {
