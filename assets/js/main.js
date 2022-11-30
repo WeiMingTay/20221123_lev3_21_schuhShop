@@ -149,3 +149,15 @@ newsletterButton.addEventListener("click", () => {
 	newsletterContainer.appendChild(thankYou);
 	newsletterContainer.appendChild(response);
 });
+
+// hamburger Menü
+let hamburger = document.querySelector(".hamburgerMenue");
+let navigation = document.querySelector(".headerNav");
+
+hamburger.addEventListener("click", navMenue);
+
+function navMenue(){
+	navigation.classList.toggle("hamburger")
+	hamburger.classList.toggle("activeHamburger")
+}
+

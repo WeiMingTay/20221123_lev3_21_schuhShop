@@ -1,4 +1,16 @@
-@media (max-width: 1000px) AND (min-width: 650px) {
+@media screen and (min-width: 1000px) {
+	#newArrivalsGrid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	#footerNavigation {
+		gap: 5rem;
+		li {
+			margin: 0.75rem 0;
+		}
+	}
+}
+
+@media screen and (max-width: 1000px) and (min-width: 700px) {
 	/* Allgemein */
 
 	/* Cookies */
@@ -26,24 +38,125 @@
 	// new Arrivals
 	#newArrivalsGrid {
 		grid-template-columns: 1fr 1fr;
-		border: 2px solid green;
 	}
 	// toMobile
+	#toMobile {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+
+		#playstore {
+			justify-content: space-evenly;
+		}
+		#appImage {
+			display: none;
+		}
+	}
 	// newsletter
+	/* #newsletter form {
+		width: 30vw;
+	} */
 	/* Footer */
+	#footerNavigation {
+		gap: 5rem;
+	}
 	// social Media
 	// Navigation
 }
-/* Allgemein */
-/* Cookies */
-/* Header */
-// Logo
-// Navigation
-/* Main */
-// Title Content
-// new Arrivals
-// toMobile
-// newsletter
-/* Footer */
-// social Media
-// Navigation
+@media screen and (max-width: 700px) {
+	/* Allgemein */
+	header,
+	section,
+	footer {
+		padding: 1rem;
+	}
+	/* Cookies */
+	.cookiesModal {
+		display: none;
+	}
+	/* Header */
+	// Logo
+	.logo {
+		width: 7%;
+		overflow: hidden;
+	}
+	// Navigation
+	nav {
+		display: none;
+	}
+	/* Main */
+	// Title Content
+	#titleContent {
+		background-image: none;
+		margin: 0 1rem;
+		text-align: center;
+		align-items: center;
+		h2 {
+			font-size: 3.5rem;
+			line-height: 3.5rem;
+		}
+		p {
+			font-size: 1rem;
+			margin: 1rem 0;
+		}
+	}
+	// new Arrivals
+	#newArrivalsGrid {
+		grid-template-columns: 1fr 1fr;
+	}
+	// Warenkorb
+	#warenkorb {
+		bottom: 1rem;
+		right: 1rem;
+		height: 75px;
+		width: 75px;
+
+		#warenkorbCounter {
+			width: 30px;
+			height: 30px;
+		}
+		img {
+			scale: 0.6;
+		}
+	}
+	// toMobile
+	#toMobile {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+
+		#playstore {
+			justify-content: space-evenly;
+		}
+
+		#appImage {
+			display: none;
+		}
+	}
+	// newsletter
+	#newsletter {
+		padding: 1rem 0;
+	}
+	/* Footer */
+	footer {
+		flex-direction: column;
+	}
+	// social Media
+	footer > div:first-child {
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+	#socialMedia a {
+		margin: 0 1rem;
+	}
+	// Navigation
+	#footerNavigation {
+		flex-direction: row;
+		gap: 2.5rem;
+
+		& li {
+			margin: 0;
+		}
+	}
+}
